@@ -14,6 +14,11 @@ body
     background-color: $bck-clr
     padding: 20px
 
+    footer
+      display: flex
+      justify-content: center
+
+
   h1
     font-size: 300%
 
@@ -24,25 +29,36 @@ body
     span
       display: inline-block
 
-    .portfolio-button
-      border: none
-      display: inline-block
-      padding: 8px 8px
-      min-width: 60px
-      vertical-align: middle
-      overflow: hidden
-      text-decoration: none
-      text-align: center
-      cursor: pointer
-      background-color: white
+.portfolio-button
+  border: none
+  display: inline-block
+  padding: 8px 8px
+  min-width: 60px
+  vertical-align: middle
+  overflow: hidden
+  text-decoration: none
+  text-align: center
+  cursor: pointer
+  background-color: white
 
-      &--first
-        @extend .portfolio-button
-        color: white
-        background-color: black
+  &:hover
+    background-color: rgb(135, 135, 135)
 
-      &:hover
-        background-color: rgb(135, 135, 135)
+  &--first
+    @extend .portfolio-button
+    color: white
+    background-color: black
+
+  &--footer
+    @extend .portfolio-button
+    color: black
+    background-color: inherit
+
+  &--footer:hover
+    @extend .portfolio-button--first
+
+
+
 
 
 
