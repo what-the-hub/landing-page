@@ -1,0 +1,23 @@
+@import "reset"
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;600&display=swap')
+@import '../fonts/scss/fontawesome'
+@import '../fonts/scss/solid'
+@import '../fonts/scss/brands'
+
+$font-main: 'Work Sans', sans-serif
+
+
+body
+  font-family: "Work Sans", sans-serif
+
+.test
+  background-color: antiquewhite
+  height: 100%
+
+.twitter
+  @extend %fa-icon
+  @extend .fab
+
+  &:before
+    content: fa-content($fa-var-twitter)
+
