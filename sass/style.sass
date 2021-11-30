@@ -82,17 +82,16 @@ body
     max-height: 60%
 
   .item-container
-    height: 33%
+    height: 100px
     padding: 10px 20px
     p
+      display: -webkit-box
+      height: 100%
+      -webkit-line-clamp: 4
+      -webkit-box-orient: vertical
       overflow: hidden
       text-overflow: ellipsis
-      display: -webkit-box
-      -webkit-box-orient: vertical
-      -webkit-line-clamp: 5 // Колиество строк
-      line-height: 20px // Для поддержки не-вебкит-браузеров, высота одной строки
-      max-height: 100%
-
+      line-height: 20px
 
 .test
   height: 100%
