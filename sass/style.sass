@@ -5,13 +5,80 @@
 @import '../fonts/scss/brands'
 
 $font-main: 'Work Sans', sans-serif
-
+$bck-clr: #f1f1f1
 
 body
-  font-family: "Work Sans", sans-serif
+  font-family: $font-main
+
+  .portfolio-body
+    background-color: $bck-clr
+    padding: 20px
+
+  h1
+    font-size: 300%
+
+  #portfolio
+    margin-top: 20px
+    display: block
+
+    span
+      display: inline-block
+
+    .portfolio-button
+      border: none
+      display: inline-block
+      padding: 8px 8px
+      min-width: 60px
+      vertical-align: middle
+      overflow: hidden
+      text-decoration: none
+      text-align: center
+      cursor: pointer
+      background-color: white
+
+      &--first
+        @extend .portfolio-button
+        color: white
+        background-color: black
+
+      &:hover
+        background-color: rgb(135, 135, 135)
+
+
+
+
+.items-block
+  display: flex
+  align-items: flex-start
+  flex-wrap: wrap
+
+
+.item
+  display: block
+  width: 300px
+  height: 300px
+  margin: 20px
+  background-color: #ffffff
+
+  img
+    width: 100%
+    object-fit: cover
+    max-height: 60%
+
+  .item-container
+    height: 33%
+    padding: 10px 20px
+    p
+      overflow: hidden
+      text-overflow: ellipsis
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 5 // Колиество строк
+      line-height: 20px // Для поддержки не-вебкит-браузеров, высота одной строки
+      max-height: 100%
+
 
 .test
-  background-color: antiquewhite
   height: 100%
 
 .twitter
