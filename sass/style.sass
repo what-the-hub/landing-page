@@ -3,31 +3,80 @@
 @import '../fonts/scss/fontawesome'
 @import '../fonts/scss/solid'
 @import '../fonts/scss/brands'
+@import '../fonts/scss/regular'
 
-$font-main: 'Work Sans', sans-serif
-$bck-clr: #f1f1f1
+@import "variables"
+@import "colors"
+
 
 body
   font-family: $font-main
 
   .portfolio-body
+    height: 100%
     background-color: $bck-clr
     padding: 20px
-
-    footer
-      display: flex
-      justify-content: center
-
-
-  h1
-    font-size: 300%
-
-  #portfolio
-    margin-top: 20px
     display: block
 
-    span
-      display: inline-block
+.new-footer
+  display: block
+
+footer
+  display: flex
+  justify-content: center
+
+h1
+  font-size: 300%
+
+#portfolio
+  margin-top: 20px
+  padding-bottom: 20px
+  margin-bottom: 20px
+  display: block
+  box-sizing: content-box
+  border-bottom: $mddl-slvr 10px solid
+
+  span
+    display: inline-block
+
+.cards-wrapper
+  display: table
+  clear: both
+  height: 100%
+
+.triple-cards
+  width: 100%
+  float: left
+  background-color: inherit
+  margin-bottom: 2%
+
+  img
+    height: 60%
+    &:hover
+      opacity: 70%
+
+
+  .item
+    float: left
+    width: 32%
+    margin: 0 2% 0 2%
+    &:last-child
+      margin: 0
+    &:first-child
+      margin: 0
+
+@media screen and (max-width: $md)
+  .triple-cards
+    display: flex
+    flex-flow: column
+    .item:nth-child(n)
+      height: 30%
+      max-height: 20%
+      margin: 0 0 3% 0
+      width: 100%
+      display: block
+
+
 
 .portfolio-button
   border: none
@@ -41,10 +90,11 @@ body
   cursor: pointer
   background-color: white
 
-  &:hover
-    background-color: rgb(135, 135, 135)
 
-  &--first
+  &:hover
+    background-color: $mddl-slvr
+    color: black
+  &--active
     @extend .portfolio-button
     color: white
     background-color: black
@@ -53,21 +103,8 @@ body
     @extend .portfolio-button
     color: black
     background-color: inherit
-
-  &--footer:hover
-    @extend .portfolio-button--first
-
-
-
-
-
-
-
-.items-block
-  display: flex
-  align-items: flex-start
-  flex-wrap: wrap
-
+    &:hover
+      @extend .portfolio-button--active
 
 .item
   display: block
@@ -75,7 +112,6 @@ body
   height: 300px
   margin: 20px
   background-color: #ffffff
-
   img
     width: 100%
     object-fit: cover
@@ -92,14 +128,4 @@ body
       overflow: hidden
       text-overflow: ellipsis
       line-height: 20px
-
-.test
-  height: 100%
-
-.twitter
-  @extend %fa-icon
-  @extend .fab
-
-  &:before
-    content: fa-content($fa-var-twitter)
 
