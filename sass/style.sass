@@ -7,12 +7,14 @@
 
 @import "variables"
 @import "colors"
+@import "mixins"
 
 
 body
   font-family: $font-main
+  background-color: $bg-dflt-clr
 
-  .portfolio-wrapper
+  section
     height: 100%
     background-color: $bg-dflt-clr
     padding: 20px
@@ -30,7 +32,7 @@ h1
   margin: 20px 0
   padding-bottom: 20px
   box-sizing: content-box
-  border-bottom: $mddl-slvr 10px solid
+  border-bottom: $grey-md 10px solid
 
   span
     display: inline-block
@@ -44,38 +46,32 @@ h1
 
 
 .portfolio-button
-  border: none
-  padding: 8px
-  min-width: 60px
-  vertical-align: middle
-  text-align: center
-  cursor: pointer
-  background-color: white
+  @include base-btn($black, $white)
+  @include hover-style($black, $grey-md)
 
-  &:hover
-    background-color: $mddl-slvr
-    color: black
-
-  &--active
-    @extend .portfolio-button
-    color: white
-    background-color: black
+  &--first
+    @include base-btn($white, $black)
+    @include hover-style($black, $grey-md)
 
   &--footer
-    @extend .portfolio-button
-    color: black
-    background-color: inherit
-    &:hover
-      @extend .portfolio-button--active
+    @include base-btn($black, $bg-dflt-clr)
+    @include hover-style($white, $black)
+    &--first
+      @extend .portfolio-button--first
+
+  &--color
+    @include base-btn($white, $green)
+    @include hover-style($white, $black)
+
 
 .item
   width: 32%
   height: 20%
-  background-color: $bg-wht
+  background-color: $white
 
   img
     width: 100%
-    height: 400px
+    height: 300px
     object-fit: cover
     &:hover
       opacity: 70%
@@ -92,3 +88,120 @@ h1
       text-overflow: ellipsis
       line-height: 20px
 
+
+.charge-wrapper
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-gap: 10px
+
+.charge-item
+  width: 100%
+  height: 400px
+  background-color: $white
+  display: grid
+  grid-template-rows: 20% 10% 10% 10% 10% 20% 20%
+  border: $grey-md solid 1px
+  opacity: 50%
+  &:hover
+    opacity: 100%
+
+  .charge-item-cell
+    border-bottom: $grey-md solid 1px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    &:last-child
+      border-bottom: 0px
+      background-color: $bg-dflt-clr
+    &:first-child
+      background-color: $black
+      color: $white
+
+  &:nth-child(2n)
+    div:first-child
+      background-color: $green
+      color: $white
+
+.scale
+  width: 100%
+  height: 20px
+  background-color: $grey-light
+
+.percent
+  width: 95%
+  height: inherit
+  background-color: $grey-hard
+
+@media screen and (min-width: $xxl)
+  .wrapper
+    width: 1200px
+    margin: 0 auto
+
+@media screen and (max-width: $xxl)
+  .cards-wrapper
+    max-height: 20%
+  .item
+    width: 32.5%
+    img
+      width: 100%
+      height: 250px
+
+
+
+
+@media screen and (max-width: $xl)
+  .cards-wrapper
+    max-height: 20%
+  .item
+    width: 32.5%
+    img
+      width: 100%
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: $lg)
+  #portfolio
+    margin-top: 20px
+
+  .item
+    width: 32.5%
+    margin: 10px 0
+    img
+      width: 100%
+      height: 200px
+
+  .charge-wrapper
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr 1fr 1fr
+
+
+
+
+@media screen and (max-width: $sm)
+  #portfolio
+    margin-top: 20px
+
+  .item
+    width: 100%
+    margin: 10px 0
+    img
+      width: 100%
+      height: 250px
+
+
+  .cards-wrapper
+    display: flex
+    flex-flow: column
+    margin: 0
+
+.test
+  @include base-btn($black, $white)
+  &:hover
+    @include base-btn($white, $black)
