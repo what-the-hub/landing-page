@@ -1,0 +1,94 @@
+@import "reset"
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;600&display=swap')
+@import '../fonts/scss/fontawesome'
+@import '../fonts/scss/solid'
+@import '../fonts/scss/brands'
+@import '../fonts/scss/regular'
+
+@import "variables"
+@import "colors"
+
+
+body
+  font-family: $font-main
+
+  .portfolio-wrapper
+    height: 100%
+    background-color: $bg-dflt-clr
+    padding: 20px
+    display: block
+
+
+.portfolio-footer
+  display: flex
+  justify-content: center
+
+h1
+  font-size: 300%
+
+#portfolio
+  margin: 20px 0
+  padding-bottom: 20px
+  box-sizing: content-box
+  border-bottom: $mddl-slvr 10px solid
+
+  span
+    display: inline-block
+
+
+.cards-wrapper
+  margin-bottom: 20px
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+
+.portfolio-button
+  border: none
+  padding: 8px
+  min-width: 60px
+  vertical-align: middle
+  text-align: center
+  cursor: pointer
+  background-color: white
+
+  &:hover
+    background-color: $mddl-slvr
+    color: black
+
+  &--active
+    @extend .portfolio-button
+    color: white
+    background-color: black
+
+  &--footer
+    @extend .portfolio-button
+    color: black
+    background-color: inherit
+    &:hover
+      @extend .portfolio-button--active
+
+.item
+  width: 32%
+  height: 20%
+  background-color: $bg-wht
+
+  img
+    width: 100%
+    height: 400px
+    object-fit: cover
+    &:hover
+      opacity: 70%
+
+  .item-container
+    height: 33%
+    padding: 10px 20px
+    p
+      display: -webkit-box
+      height: 100%
+      -webkit-line-clamp: 4
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+      line-height: 20px
+
