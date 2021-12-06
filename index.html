@@ -8,6 +8,11 @@
 </head>
 <body>
 <div class="wrapper">
+    <div class="sticky-header">
+        <i class="fa fa-bars"></i>
+        <img alt="avatar" src="https://ichef.bbci.co.uk/news/640/cpsprodpb/FE42/production/_103609056_049596185-1.jpg">
+
+    </div>
     <nav class="menu" tabindex="0">
         <div class="info-block">
             <div class="smartphone-menu-trigger"></div>
@@ -18,9 +23,9 @@
             </header>
         </div>
         <ul>
-            <li tabindex="0" class="sidebar-button"><span><i class="fa fa-th-large fa-fw"></i>PORTFOLIO</span></li>
-            <li tabindex="0" class="sidebar-button"><span><i class="fa fa-user fa-fw"></i>ABOUT</span></li>
-            <li tabindex="0" class="sidebar-button"><span><i class="fa fa-envelope fa-fw"></i>CONTACT</span></li>
+            <li class="sidebar-button"><a href="#portfolio"><i class="fa fa-th-large fa-fw"></i>PORTFOLIO</a></li>
+            <li class="sidebar-button"><a href="#about"><i class="fa fa-user fa-fw"></i>ABOUT</a></li>
+            <li class="sidebar-button"><a href="#contact"><i class="fa fa-envelope fa-fw"></i>CONTACT</a></li>
         </ul>
         <div class="menu-links">
             <a href=""><span><i class="fab fa-facebook-square"></i></span></a>
@@ -32,11 +37,11 @@
         </div>
     </nav>
     <main>
-        <section class="portfolio-wrapper">
+        <section id="portfolio">
             <h1>
                 My portfolio
             </h1>
-            <header id="portfolio">
+            <header class="portfolio">
                 <span>Filter: </span>
                 <button class="portfolio-button--first">All</button>
                 <button class="portfolio-button">
@@ -124,7 +129,7 @@
             </div>
         </section>
 
-        <section class="about-wrapper">
+        <section id="about">
             <div class="about-images">
                 <img src="https://ic.pics.livejournal.com/zelenyikot/65139567/270602/270602_original.jpg" alt="Roadster">
                 <img src="https://kinotoday.ru/upload/setka-editor/f72/didavg3gsa1zm978ac5owf4qer3va4ej.jpeg"
@@ -209,7 +214,7 @@
             </div>
         </section>
 
-        <section class="contact-me">
+        <section id="contact" class="contact-me">
             <div class="contact-items mg-btm">
                 <h2 class="mg-btm">Contact Me</h2>
                 <div class="block-wrapper">
@@ -249,7 +254,7 @@
             </div>
         </section>
         <section class="contact-footer">
-            <div class="f-first-block">
+            <div>
                 <h3 class="mg-btm">FOOTER</h3>
                 <p class="mg-btm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem beatae
                     consequuntur
@@ -257,7 +262,7 @@
                     repellendus sapiente, sunt veniam!</p>
                 <p class="mg-btm">Powered by <a href="https://youtu.be/dQw4w9WgXcQ?t=42">Me</a></p>
             </div>
-            <div class="f-second-block">
+            <div>
                 <h3 class="mg-btm">BLOG POSTS</h3>
                 <div class="f-button-card">
                     <img src="https://www.meme-arsenal.com/memes/dc4131594a8f353268afb152599eea71.jpg" alt="">
@@ -271,7 +276,7 @@
                     <p>Sed mattis nunc</p>
                 </div>
             </div>
-            <div class="f-third-block">
+            <div>
                 <h3 class="mg-btm">POPULAR TAGS</h3>
                 <span class="tags">Travel</span>
                 <span class="tags">New York</span>
