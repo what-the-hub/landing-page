@@ -13,16 +13,21 @@
 body
   font-family: $font-main
   background-color: $bg-dflt-clr
+  position: relative
 
   section
     height: 100%
     background-color: $bg-dflt-clr
     padding: $px20
     display: block
+
   .contact-me
     background-color: $grey-light
     margin: 0
 
+.wrapper
+  width: 100%
+  position: relative
 
 .portfolio-footer
   display: flex
@@ -66,6 +71,12 @@ label
 
   span
     display: inline-block
+
+
+main
+  position: absolute
+  top: 50%
+  left: 300px
 
 
 .cards-wrapper
@@ -225,6 +236,48 @@ label
       text-overflow: ellipsis
       line-height: $px20
 
+.sidebar-button
+  @extend .portfolio-button
+  text-align: left
+  padding: 10px $px20
+  &:first-child
+    color: $green
+  i
+    margin-right: 10px
+
+.menu-links
+  padding: 10px $px20
+  text-decoration: none
+  color: black
+  display: flex
+  justify-content: flex-start
+
+  a
+    font-size: large
+    margin-right: $px20
+    &:visited
+      color: $black
+    &:hover
+      opacity: 70%
+
+.menu
+  background: $white
+  height: 100vh
+  position: fixed
+  top: 0
+  z-index: 5
+  width: 300px
+  outline: none
+
+.info-block
+  padding: $px20
+
+.avatar-info
+  width: 100%
+  img
+    width: 150px
+    height: 150px
+    object-fit: cover
 
 .charge-wrapper
   display: grid
@@ -337,9 +390,10 @@ label
     max-height: 20%
   .item
     width: 32.5%
-
     img
       width: 100%
+
+
 
 
 @media screen and (max-width: $lg)
@@ -357,6 +411,14 @@ label
   .charge-wrapper
     grid-template-columns: 1fr
     grid-template-rows: 1fr 1fr 1fr
+
+  .menu
+    display: none
+    position: relative
+
+  main
+    position: relative
+    left: 0
 
 @media screen and (max-width: $md)
   .about-images
