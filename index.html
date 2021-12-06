@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
+<head>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
 <div class="wrapper">
-    <head>
-        <title>Landing Page</title>
-        <link rel="stylesheet" href="css/style.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
     <section class="portfolio-wrapper">
         <h1>
             My portfolio
@@ -30,7 +28,6 @@
                 Art
             </button>
         </header>
-
         <div class="cards-wrapper">
             <div class="item">
                 <img alt="Bezos"
@@ -93,16 +90,14 @@
                 </div>
             </div>
         </div>
-
-        <footer class="portfolio-footer">
-            <button class="portfolio-button--footer"><<</button>
+        <div class="portfolio-footer">
+            <button class="portfolio-button--footer">&lt;&lt;</button>
             <button class="portfolio-button--footer--first">1</button>
             <button class="portfolio-button--footer">2</button>
             <button class="portfolio-button--footer">3</button>
             <button class="portfolio-button--footer">4</button>
             <button class="portfolio-button--footer">>></button>
-        </footer>
-
+        </div>
     </section>
 
     <section class="about-wrapper">
@@ -145,9 +140,7 @@
                 <i class="fa fa-download"></i>
                 Download Resume
             </button>
-
         </div>
-
         <h1>How much I charge</h1>
         <div class="charge-wrapper">
             <div class="charge-item">
@@ -189,10 +182,100 @@
                     <button class="portfolio-button--color">Sign Up</button>
                 </div>
             </div>
-
-
         </div>
     </section>
+
+    <section class="contact-me">
+        <div class="contact-items mg-btm">
+            <h2 class="mg-btm">Contact Me</h2>
+            <div class="block-wrapper">
+                <a class="block" href="mailto:email@email.com">
+                    <div class="icon-message">
+                        <i class="fa fa-envelope mg-btm"></i>
+                        <p>email@email.com</p>
+                    </div>
+                </a>
+                <a class="block" href="https://maps.google.com/?q=50.45112524552318,30.526240341027922">
+                    <div class="icon-message">
+                        <i class="fa fa-map-marker mg-btm"></i>
+                        <p>Kyiv, UA</p>
+                    </div>
+                </a>
+                <a class="block" href="tel:068-400-8020">
+                    <div class="icon-message">
+                        <i class="fa fa-phone mg-btm"></i>
+                        <p>0684008020</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="form-wrapper">
+            <form id="form1">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="John Doe">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="john@example.com">
+                <label for="message">Message</label>
+                <input type="text" id="message" placeholder="I want to donate all the money that I have to you">
+            </form>
+            <button class="portfolio-button--send" type="submit" form="form1" value="Submit">
+                <i class="fa fa-paper-plane w3-margin-right"></i>
+                Send Message
+            </button>
+        </div>
+    </section>
+    <section class="contact-footer">
+        <div class="f-first-block">
+            <h3 class="mg-btm">FOOTER</h3>
+            <p class="mg-btm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam autem beatae
+                consequuntur
+                dolor error esse ex inventore ipsam iste laboriosam libero, maiores officiis provident quasi
+                repellendus sapiente, sunt veniam!</p>
+            <p class="mg-btm">Powered by <a href="https://youtu.be/dQw4w9WgXcQ?t=42">Me</a></p>
+        </div>
+        <div class="f-second-block">
+            <h3 class="mg-btm">BLOG POSTS</h3>
+            <div class="f-button-card">
+                <img src="https://www.meme-arsenal.com/memes/dc4131594a8f353268afb152599eea71.jpg" alt="">
+                <h3>Lorem</h3>
+                <p>Sed mattis nunc</p>
+            </div>
+            <div class="f-button-card">
+                <img src="https://www.dictionary.com/e/wp-content/uploads/2021/02/20210202_atw_stonks_800x800.png"
+                     alt="">
+                <h3>Ipsum</h3>
+                <p>Sed mattis nunc</p>
+            </div>
+        </div>
+        <div class="f-third-block">
+            <h3 class="mg-btm">POPULAR TAGS</h3>
+            <span class="tags">Travel</span>
+            <span class="tags">New York</span>
+            <span class="tags">London</span>
+            <span class="tags">Ikea</span>
+            <span class="tags">Norway</span>
+            <span class="tags">DIY</span>
+            <span class="tags">Ideas</span>
+            <span class="tags">Baby</span>
+            <span class="tags">News</span>
+            <span class="tags">Clothings</span>
+            <span class="tags">Shoping</span>
+            <span class="tags">Sport</span>
+            <span class="tags">Games</span>
+            <span class="tags">News</span>
+            <span class="tags">Clothings</span>
+            <span class="tags">News</span>
+            <span class="tags">Clothings</span>
+            <span class="tags">Shoping</span>
+            <span class="tags">Sport</span>
+            <span class="tags">Games</span>
+            <span class="tags">News</span>
+            <span class="tags">Clothings</span>
+        </div>
+    </section>
+    <footer>
+        Wow! This is the end
+    </footer>
 
 </div>
 </body>
