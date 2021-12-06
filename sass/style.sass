@@ -19,6 +19,9 @@ body
     background-color: $bg-dflt-clr
     padding: $px20
     display: block
+  .contact-me
+    background-color: $grey-light
+    margin: 0
 
 
 .portfolio-footer
@@ -33,6 +36,27 @@ h2
 
 h3
   font-size: 24px
+
+footer
+  color: $white
+  background-color: $black
+  width: 100%
+  text-align: center
+  padding: 40px
+
+
+
+input
+  width: 100%
+  height: 40px
+  border: 0
+  margin-bottom: $px20
+  padding: $px20
+
+label
+  font-size: 24px
+  display: inline-block
+  margin-bottom: 10px
 
 #portfolio
   margin: $px20 0
@@ -59,6 +83,7 @@ h3
     @include base-btn($white, $black)
     @include hover-style($black, $grey-md)
 
+
   &--footer
     @include base-btn($black, $bg-dflt-clr)
     @include hover-style($white, $black)
@@ -82,11 +107,102 @@ h3
     margin-top: $px20
     font-size: 18px
 
+  &--send
+    @extend .portfolio-button--first
+    min-width: 20%
+    height: 50px
+    padding: 0 $px20
+    font-size: 18px
+    i
+      margin-right: $px20
+
+.block-wrapper
+  display: flex
+
+.form-wrapper
+
+.contact-items
+  padding-bottom: 40px
+  border-bottom: 1px solid $white
+
+.contact-footer
+  width: 100%
+  height: auto
+  color: $white
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-gap: 10px
+  background-color: $grey-hard
+  padding: $px20
+
+  a
+    color: $white
+
+
+  .f-third-block
+
+    span
+      padding: 5px
+      margin: 0 5px 5px 0
+      background-color: $grey-light
+      color: $black
+      float: left
+      &:first-of-type
+        background-color: $black
+        color: $white
+        font-size: large
+        margin-top: -2px
+
+.f-button-card
+  display: inline-block
+  width: 100%
+  &:first-of-type
+    border-bottom: 1px $white solid
+
+  &:hover
+    background-color: $grey-md
+    cursor: pointer
+
+  img
+    float: left
+    width: 60px
+    height: 60px
+    margin: 10px
+    object-fit: cover
+
+  h3, p
+    margin: 10px
+
+
+
+
+
+.block
+  width: 100%
+  flex-direction: row
+  height: 200px
+  background-color: $grey-hard
+  color: $white
+  display: flex
+  text-decoration: none
+  align-items: center
+  justify-content: center
+
+  &:nth-child(even)
+    background-color: $green
+
+  .icon-message
+    display: flex
+    align-items: center
+    flex-direction: column
+    i
+      font-size: 64px
 
 .item
   width: 32%
   height: 20%
   background-color: $white
+
 
   img
     width: 100%
@@ -186,7 +302,6 @@ h3
   background-color: $grey-hard
   font-size: 36px
   text-align: center
-  vertical-align: center
   line-height: 40px
 
   &--second
@@ -196,6 +311,10 @@ h3
   &--last
     @extend .percent
     width: 80%
+
+.mg-btm
+  margin-bottom: $px20
+
 
 @media screen and (min-width: $xxl)
   .wrapper
@@ -242,11 +361,20 @@ h3
 @media screen and (max-width: $md)
   .about-images
     flex-direction: column
-
     img
       width: 100%
       height: 300px
       object-fit: cover
+
+  .contact-footer
+    grid-template-columns: 1fr
+
+  .block-wrapper
+    flex-direction: column
+
+
+
+
 
 
 @media screen and (max-width: $sm)
@@ -261,14 +389,7 @@ h3
       width: 100%
       height: 250px
 
-
   .cards-wrapper
     display: flex
     flex-flow: column
     margin: 0
-
-.test
-  @include base-btn($black, $white)
-
-  &:hover
-    @include base-btn($white, $black)
