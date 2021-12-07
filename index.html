@@ -9,23 +9,30 @@
 <body>
 <div class="wrapper">
     <div class="sticky-header">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars" id="openSidebar" onclick="openSidebar()"></i>
         <img alt="avatar" src="https://ichef.bbci.co.uk/news/640/cpsprodpb/FE42/production/_103609056_049596185-1.jpg">
-
     </div>
-    <nav class="menu" tabindex="0">
+    <nav class="menu" id="mySidebar">
         <div class="info-block">
-            <div class="smartphone-menu-trigger"></div>
             <header class="avatar-info">
-                <img class="mg-btm" alt="avatar" src="https://ichef.bbci.co.uk/news/640/cpsprodpb/FE42/production/_103609056_049596185-1.jpg" />
+                <div class="avatar-button">
+                    <img class="mg-btm" alt="avatar"
+                         src="https://ichef.bbci.co.uk/news/640/cpsprodpb/FE42/production/_103609056_049596185-1.jpg"/>
+                    <button class="portfolio-button" id="close-btn" onclick="closeSidebar()"><i
+                            class="fas fa-times"></i></button>
+                </div>
+
                 <h1 class="mg-btm">Portfolio</h1>
                 <h3>Template by W3.CSS</h3>
             </header>
         </div>
         <ul>
-            <li class="sidebar-button"><a href="#portfolio"><i class="fa fa-th-large fa-fw"></i>PORTFOLIO</a></li>
-            <li class="sidebar-button"><a href="#about"><i class="fa fa-user fa-fw"></i>ABOUT</a></li>
-            <li class="sidebar-button"><a href="#contact"><i class="fa fa-envelope fa-fw"></i>CONTACT</a></li>
+            <li class="sidebar-button"><a href="#portfolio" onclick="closeSidebar()"><i
+                    class="fa fa-th-large fa-fw"></i>PORTFOLIO</a></li>
+            <li class="sidebar-button"><a href="#about" onclick="closeSidebar()"><i
+                    class="fa fa-user fa-fw"></i>ABOUT</a></li>
+            <li class="sidebar-button"><a href="#contact" onclick="closeSidebar()"><i class="fa fa-envelope fa-fw"></i>CONTACT</a>
+            </li>
         </ul>
         <div class="menu-links">
             <a href=""><span><i class="fab fa-facebook-square"></i></span></a>
@@ -36,6 +43,7 @@
             <a href=""><span><i class="fab fa-linkedin"></i></span></a>
         </div>
     </nav>
+    <div class="blur-screen" onclick="closeSidebar()"></div>
     <main>
         <section id="portfolio">
             <h1>
@@ -62,7 +70,8 @@
                     <img alt="Bezos"
                          src="https://kod.ru/content/images/2020/08/jeff-bezos-amazon-el-hombre-mas-rico-del-mundo_1520365805_1.jpg_1834093470.jpg">
                     <div class="item-container">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis dolor,
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis
+                            dolor,
                             dolorem ducimus eos, error eum excepturi facilis illo itaque laboriosam neque quae quia
                             repudiandae.
                             Deleniti mollitia praesentium voluptatibus.</p>
@@ -72,7 +81,8 @@
                     <img alt="Noosfera"
                          src="https://dnepr.web2ua.com/wp-content/uploads/2020/12/595275_dneprjane_stali_blizhe_k_zvezdam_planetar-1.png">
                     <div class="item-container">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis dolor,
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis
+                            dolor,
                             dolorem ducimus eos, error eum excepturi facilis illo itaque laboriosam neque quae quia
                             repudiandae.
                             Deleniti mollitia praesentium voluptatibus.</p>
@@ -82,7 +92,8 @@
                     <img alt="Virgin"
                          src="https://c.files.bbci.co.uk/1E38/production/_104763770_vg_third_powered_flight_-_take_off_hd_ready.jpg">
                     <div class="item-container">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis dolor,
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis
+                            dolor,
                             dolorem ducimus eos, error eum excepturi facilis illo itaque laboriosam neque quae quia
                             repudiandae.
                             Deleniti mollitia praesentium voluptatibus.</p>
@@ -91,7 +102,8 @@
                 <div class="item">
                     <img alt="Mask" src="https://bankruptcy-ua.com/assets_images/publication/15705/photo_originals.jpg">
                     <div class="item-container">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis dolor,
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis
+                            dolor,
                             dolorem ducimus eos, error eum excepturi facilis illo itaque laboriosam neque quae quia
                             repudiandae.
                             Deleniti mollitia praesentium voluptatibus.</p>
@@ -101,16 +113,19 @@
                     <img alt="Rocket"
                          src="https://hightech.fm/wp-content/uploads/2019/11/%D0%91%D0%B5%D0%B7-%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-28.jpeg">
                     <div class="item-container">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis dolor,
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis
+                            dolor,
                             dolorem ducimus eos, error eum excepturi facilis illo itaque laboriosam neque quae quia
                             repudiandae.
                             Deleniti mollitia praesentium voluptatibus.</p>
                     </div>
                 </div>
                 <div class="item">
-                    <img alt="DogeCoin" src="https://financy.24tv.ua/resources/photos/news/1200x675_DIR/202108/1707469.jpg">
+                    <img alt="DogeCoin"
+                         src="https://financy.24tv.ua/resources/photos/news/1200x675_DIR/202108/1707469.jpg">
                     <div class="item-container">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis dolor,
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus consequuntur corporis
+                            dolor,
                             dolorem ducimus eos, error eum excepturi facilis illo itaque laboriosam neque quae quia
                             repudiandae.
                             Deleniti mollitia praesentium voluptatibus.</p>
@@ -129,20 +144,23 @@
 
         <section id="about">
             <div class="about-images">
-                <img src="https://ic.pics.livejournal.com/zelenyikot/65139567/270602/270602_original.jpg" alt="Roadster">
+                <img src="https://ic.pics.livejournal.com/zelenyikot/65139567/270602/270602_original.jpg"
+                     alt="Roadster">
                 <img src="https://kinotoday.ru/upload/setka-editor/f72/didavg3gsa1zm978ac5owf4qer3va4ej.jpeg"
                      alt="Odysseya">
             </div>
-
             <div class="about-text">
                 <h1>About Me</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at atque, corporis cumque ea eaque
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at atque, corporis cumque ea
+                    eaque
                     eius
-                    et illo libero minima nisi sint tempore, voluptate voluptatibus? Ex numquam qui recusandae.Lorem ipsum
+                    et illo libero minima nisi sint tempore, voluptate voluptatibus? Ex numquam qui recusandae.Lorem
+                    ipsum
                     dolor sit amet, consectetur adipisicing elit. Ad aperiam at atque, corporis cumque ea eaque
                     eius
-                    et illo libero minima nisi sint tempore, voluptate voluptatibus? Ex numquam qui recusandae.Lorem ipsum
+                    et illo libero minima nisi sint tempore, voluptate voluptatibus? Ex numquam qui recusandae.Lorem
+                    ipsum
                     dolor sit amet, consectetur adipisicing elit. Ad aperiam at atque, corporis cumque ea eaque
                     eius
                     et illo libero minima nisi sint tempore, voluptate voluptatibus? Ex numquam qui recusandae.
@@ -303,10 +321,9 @@
         <footer>
             Wow! This is the end
         </footer>
-
     </main>
 
-
 </div>
+<script src='./index.js'></script>
 </body>
 </html>
