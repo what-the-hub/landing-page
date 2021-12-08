@@ -1,15 +1,34 @@
-let sidebar = document.getElementById("mySidebar").style
-let blurScreen = document.querySelector(".blur-screen").style
+let sidebarStyle = document.getElementById("mySidebar").style
+let blurScreenStyle = document.querySelector(".blur-screen").style
 
 const openSidebar = () => {
-    sidebar.display = 'block'
-    sidebar.position = 'fixed'
-    sidebar.boxShadow = 'rgb(0 0 0 / 20%) 5px 0px 10px'
-    blurScreen.display = 'block'
+    sidebarStyle.display = 'block'
+    sidebarStyle.position = 'fixed'
+    sidebarStyle.boxShadow = 'rgb(0 0 0 / 20%) 5px 0px 10px'
+    blurScreenStyle.display = 'block'
     document.getElementById('close-btn').style.display = 'block'
 }
 
 const closeSidebar = () => {
-    sidebar.display = 'none'
-    blurScreen.display = 'none'
+    sidebarStyle.display = 'none'
+    blurScreenStyle.display = 'none'
 }
+
+
+const deleteItem = (elem) => {
+    console.log(elem)
+    console.log(elem.parentNode.id)
+    let parentId = elem.parentNode.id
+    document.getElementById(parentId).remove()
+    let temp = document.querySelector(".cards-wrapper")
+    let item = document.querySelector(".item")
+    let itemsCount = temp.childElementCount
+    if (itemsCount % 2){
+        //item.style.width = '49.5%'
+    }
+
+
+
+}
+//other variant example
+document.getElementById('openSidebar').onclick = openSidebar
