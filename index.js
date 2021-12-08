@@ -16,18 +16,20 @@ const closeSidebar = () => {
 
 
 const deleteItem = (elem) => {
-    console.log(elem)
-    console.log(elem.parentNode.id)
-    let parentId = elem.parentNode.id
-    document.getElementById(parentId).remove()
-    let temp = document.querySelector(".cards-wrapper")
-    let item = document.querySelector(".item")
-    let itemsCount = temp.childElementCount
-    if (itemsCount % 2){
-        //item.style.width = '49.5%'
+    document.getElementById(elem.parentNode.id).remove()
+
+    const items = document.querySelectorAll('.item')
+    const itemsCount = items.length
+
+    if (!(itemsCount % 2)){
+        items.forEach(element => element.classList.add('two-items'))
     }
-
-
+    if (!(itemsCount % 3)){
+        items.forEach(element => element.classList.add('three-items'))
+    }
+    if (!itemsCount){
+        document.getElementById("portfolio").style.display = 'none'
+    }
 
 }
 //other variant example
