@@ -82,7 +82,7 @@ main
   margin-bottom: $px20
   width: 100%
   display: flex
-  justify-content: space-between
+  //justify-content: space-between
   flex-wrap: wrap
 
 
@@ -234,7 +234,6 @@ main
 .item
   position: relative
   width: 32%
-  height: 20%
   margin: 10px 0
   background-color: $white
 
@@ -245,6 +244,12 @@ main
     z-index: 1
     right: 0
     top: 0
+
+  .info
+    left: 0
+
+
+
 
   img
     width: 100%
@@ -260,12 +265,12 @@ main
 
 
   .item-container
+    min-height: 33%
     height: 33%
     padding: 10px $px20
 
     p
       display: -webkit-box
-      height: 100%
       -webkit-line-clamp: 4
       -webkit-box-orient: vertical
       overflow: hidden
@@ -275,11 +280,11 @@ main
 
 .two-items
   width: 49.5%
-  // box-shadow: black 10px 10px 10px
+  box-shadow: black 10px 10px 10px
 
 .three-items
   width: 32%
-  // box-shadow: #ff0000 10px 10px 10px
+  box-shadow: #ff0000 10px 10px 10px
 
 
 .sidebar-button
