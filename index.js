@@ -19,28 +19,24 @@ const deleteItem = (elem) => {
     document.getElementById(elem.parentNode.id).remove()
 
     const items = document.querySelectorAll('.item')
-
-    let myMap = new Map()
-    myMap.set(3, '.three-items')
-        .set(2, '.two-items')
-        .set(1, '.one-item')
-
     const itemsCount = items.length
 
-    //myMap.forEach()
+    let myMap = new Map()
+    myMap.set(0, 'two-items')
+        .set(1, 'three-items')
 
-    if (itemsCount % 2) {
-        items.forEach(element => element.classList.add('two-items'))
+    for (let item of items) {
+        if (!itemsCount) {
+            document.getElementById("portfolio").style.display = 'none'
+            break
+        } else if (myMap.has(itemsCount % 2)) {
+            item.classList.remove('two-items', 'three-items')
+            item.classList.add(`${myMap.get(itemsCount % 2)}`)
+        }
     }
-    if (!(itemsCount % 3)) {
-        items.forEach(element => element.classList.add('three-items'))
-    }
-    if (!itemsCount) {
-        document.getElementById("portfolio").style.display = 'none'
-    }
-
 }
-//other example
+
+//other variant example
 document.getElementById('openSidebar').onclick = openSidebar
 
 
