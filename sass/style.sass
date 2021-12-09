@@ -136,7 +136,7 @@ main
 .sticky-header
   display: flex
   position: fixed
-  z-index: 1
+  z-index: 10
   left: 0
   top: 0
   width: 100%
@@ -232,18 +232,32 @@ main
       font-size: 64px
 
 .item
+  position: relative
   width: 32%
   height: 20%
+  margin: 10px 0
   background-color: $white
 
+  button
+    display: none
+    position: absolute
+    min-width: 30px
+    z-index: 1
+    right: 0
+    top: 0
 
   img
     width: 100%
     height: 300px
     object-fit: cover
 
-    &:hover
+  &:hover
+    img
       opacity: 70%
+
+    button
+      display: block
+
 
   .item-container
     height: 33%
@@ -257,6 +271,16 @@ main
       overflow: hidden
       text-overflow: ellipsis
       line-height: $px20
+
+
+.two-items
+  width: 49.5% !important
+//box-shadow: black 10px 10px 10px
+
+.three-items
+  width: 32% !important
+//box-shadow: #ff0000 10px 10px 10px
+
 
 .sidebar-button
   @extend .portfolio-button
@@ -445,9 +469,6 @@ main
 @media screen and (max-width: $xl)
   .cards-wrapper
     max-height: 20%
-  .item
-    width: 32.5%
-    margin: 10px 0
 
     img
       width: 100%
@@ -457,9 +478,6 @@ main
   #portfolio
     margin-top: $px20
 
-  .item
-    width: 32.5%
-    margin: 10px 0
 
     img
       width: 100%
