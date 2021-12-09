@@ -36,5 +36,6 @@ const deleteItem = (elem) => {
     }
 }
 
+
 //other variant example
 document.getElementById('openSidebar').onclick = openSidebar
