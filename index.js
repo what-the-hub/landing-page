@@ -21,18 +21,26 @@ const deleteItem = (elem) => {
     const items = document.querySelectorAll('.item')
     const itemsCount = items.length
 
-    let myMap = new Map()
-    myMap.set(0, 'two-items')
-        .set(1, 'three-items')
+    const removeClasses = (element) => {
+        return element.classList.remove('two-items', 'three-items')
+    }
 
-    for (let item of items) {
-        if (!itemsCount) {
-            document.getElementById("portfolio").style.display = 'none'
-            break
-        } else if (myMap.has(itemsCount % 2)) {
-            item.classList.remove('two-items', 'three-items')
-            item.classList.add(`${myMap.get(itemsCount % 2)}`)
-        }
+    if (!itemsCount) {
+        document.getElementById("portfolio").style.display = 'none'
+        return 0
+    } else {
+        let myMap = new Map()
+        myMap.set(2, 'two-items')
+            .set(3, 'three-items')
+
+        myMap.forEach((value, key) => {
+            if (itemsCount % key === 0) {
+                items.forEach(item => {
+                    removeClasses(item)
+                    item.classList.add(value)
+                })
+            }
+        })
     }
 }
 
@@ -40,11 +48,12 @@ const deleteItem = (elem) => {
 document.getElementById('openSidebar').onclick = openSidebar
 
 
-function showInfo() {
-    alert(this.parentNode.lastElementChild.textContent)
+function showInfo(event) {
+    alert(event.target.parentNode.lastElementChild.textContent)
 }
 
 const infoButtons = document.querySelectorAll('.info')
+
 infoButtons.forEach(function (el) {
     el.addEventListener('click', showInfo)
 })
