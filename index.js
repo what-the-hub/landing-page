@@ -37,14 +37,16 @@ const deleteItem = (elem) => {
         myMap.set(2, 'two-items')
             .set(3, 'three-items')
 
-        myMap.forEach((value, key) => {
-            if (itemsCount % key === 0) {
+        for (let elem of myMap) {
+            if (itemsCount % elem[0] === 0) {
                 items.forEach(item => {
                     removeClasses(item)
-                    item.classList.add(value)
+                    item.classList.add(elem[1])
                 })
+                break
             }
-        })
+        }
+
     }
 }
 
