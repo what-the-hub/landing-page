@@ -18,40 +18,37 @@ const closeSidebar = () => {
     blurScreenStyle.display = 'none'
 }
 
+const changeSize = (items, itemsCount) => {
+    let myMap = new Map()
+    myMap.set(2, 'two-items')
+        .set(3, 'three-items')
+    for (let elem of myMap) {
+        if (itemsCount % elem[0] === 0) {
+            items.forEach(item => {
+                item.classList.remove('two-items', 'three-items')
+                item.classList.add(elem[1])
+            })
+            break
+        }
+    }
+}
 
-const deleteItem = (elem) => {
-    document.getElementById(elem.parentNode.id).remove()
-
+const changeItemsFlow = () => {
     const items = document.querySelectorAll('.item')
     const itemsCount = items.length
-
-    const removeClasses = (element) => {
-        return element.classList.remove('two-items', 'three-items')
-    }
 
     if (!itemsCount) {
         document.getElementById("portfolio").style.display = 'none'
         return 0
     } else {
-        let myMap = new Map()
-        myMap.set(2, 'two-items')
-            .set(3, 'three-items')
-
-        for (let elem of myMap) {
-            if (itemsCount % elem[0] === 0) {
-                items.forEach(item => {
-                    removeClasses(item)
-                    item.classList.add(elem[1])
-                })
-                break
-            }
-        }
-
+        changeSize(items, itemsCount)
     }
 }
 
-document.getElementById('openSidebar').onclick = openSidebar
-
+const deleteItem = (elem) => {
+    document.getElementById(elem.parentNode.id).remove()
+    changeItemsFlow()
+}
 
 function showInfo(event) {
     const par = document.createElement('p')
@@ -66,6 +63,8 @@ function modalClear() {
     modal.style.display = 'none'
     modal.firstElementChild.lastElementChild.remove()
 }
+
+document.getElementById('openSidebar').onclick = openSidebar
 
 infoButtons.forEach(function (el) {
     el.addEventListener('click', showInfo)
