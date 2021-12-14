@@ -1,5 +1,9 @@
-let sidebarStyle = document.getElementById("mySidebar").style
-let blurScreenStyle = document.querySelector(".blur-screen").style
+const sidebarStyle = document.getElementById("mySidebar").style
+const blurScreenStyle = document.querySelector(".blur-screen").style
+const modal = document.getElementById('myModal')
+const closeModalBut = document.getElementById('close-modal')
+const infoButtons = document.querySelectorAll('.info')
+
 
 const openSidebar = () => {
     sidebarStyle.display = 'block'
@@ -44,17 +48,30 @@ const deleteItem = (elem) => {
     }
 }
 
-
-//other variant example
 document.getElementById('openSidebar').onclick = openSidebar
 
 
 function showInfo(event) {
-    alert(event.target.parentNode.lastElementChild.textContent)
+    const par = document.createElement('p')
+    const text = event.target.parentNode.lastElementChild.textContent
+    par.innerText = text
+    modal.firstElementChild.appendChild(par)
+    modal.style.display = 'block'
+
 }
 
-const infoButtons = document.querySelectorAll('.info')
+function modalClear() {
+    modal.style.display = 'none'
+    modal.firstElementChild.lastElementChild.remove()
+}
 
 infoButtons.forEach(function (el) {
     el.addEventListener('click', showInfo)
 })
+
+closeModalBut.onclick = modalClear
+window.onclick = (event) => {
+    if (event.target === modal) {
+        modalClear()
+    }
+}
